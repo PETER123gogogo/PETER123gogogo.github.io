@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>荒野大镖客2线上 - Blood Money 活动</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // 配置Tailwind自定义颜色和字体
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'western-black': '#121212',
+                        'western-orange': '#E67E22',
+                        'western-yellow': '#F39C12',
+                        'western-red': '#C0392B',
+                        'western-brown': '#8B4513',
+                        'western-beige': '#F5DEB3'
+                    },
+                    fontFamily: {
+                        'western': ['"Playfair Display"', 'serif', '"Times New Roman"']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            }
+            .text-shadow-lg {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            }
+            .western-border {
+                border-image: url('https://picsum.photos/id/106/200/200') 30 stretch;
+            }
+            .parallax {
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-20px); }
+                100% { transform: translateY(0px); }
+            }
+            .animate-pulse-slow {
+                animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-western-black text-western-beige font-western overflow-x-hidden">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-western-black/80 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fa fa-crosshairs text-western-red text-2xl mr-2"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-western-yellow">荒野大镖客2</h1>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-western-orange transition-colors duration-300">关于活动</a>
+                <a href="#missions" class="hover:text-western-orange transition-colors duration-300">任务详情</a>
+                <a href="#rewards" class="hover:text-western-orange transition-colors duration-300">奖励预览</a>
+                <a href="#gallery" class="hover:text-western-orange transition-colors duration-300">游戏截图</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-western-yellow text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-western-black/95 backdrop-blur-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#about" class="py-2 hover:text-western-orange transition-colors duration-300">关于活动</a>
+                <a href="#missions" class="py-2 hover:text-western-orange transition-colors duration-300">任务详情</a>
+                <a href="#rewards" class="py-2 hover:text-western-orange transition-colors duration-300">奖励预览</a>
+                <a href="#gallery" class="py-2 hover:text-western-orange transition-colors duration-300">游戏截图</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/id/1059/1920/1080" alt="荒野大镖客2西部场景" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-western-black/70 via-western-black/50 to-western-black"></div>
+        </div>
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-4 text-western-red animate-float text-shadow-lg">
+                BLOOD MONEY
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-western-beige text-shadow max-w-3xl mx-auto">
+                踏入西部最黑暗的角落，完成危险任务，获取丰厚报酬
+            </p>
+            <a href="#about" class="inline-block bg-western-orange hover:bg-western-yellow text-western-black font-bold py-3 px-8 rounded-sm transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                了解更多 <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-8 left-0 right-0 text-center animate-bounce">
+            <i class="fa fa-angle-double-down text-western-yellow text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- 关于活动 -->
+    <section id="about" class="py-20 bg-western-black relative">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://picsum.photos/id/1076/1920/1080" alt="西部纹理背景" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-western-yellow relative inline-block">
+                    关于 Blood Money 活动
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-western-red"></span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <p class="text-lg mb-6 leading-relaxed">
+                        Blood Money 是《荒野大镖客2》线上模式的一个全新活动，将带您深入西部最危险的区域，与各类不法之徒打交道。
+                    </p>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        在这个活动中，您将接受来自莱莫恩掠夺者、安巴里诺窃贼等组织的任务，通过完成这些高风险任务获取丰厚报酬。但请小心，法律的眼睛无处不在。
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center">
+                            <i class="fa fa-star text-western-yellow mr-2"></i>
+                            <span>全新任务线</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-briefcase text-western-orange mr-2"></i>
+                            <span>高额悬赏金</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-gun text-western-red mr-2"></i>
+                            <span>独特武器</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-user text-western-beige mr-2"></i>
+                            <span>专属外观</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 relative group">
+                    <img src="https://picsum.photos/id/1071/800/600" alt="Blood Money 活动场景" class="w-full h-auto rounded-sm shadow-2xl transform transition-all duration-500 group-hover:scale-105">
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-western-red flex items-center justify-center bg-western-black/80 backdrop-blur-sm transform transition-all duration-500 group-hover:rotate-12">
+                        <span class="text-center text-western-red font-bold">限时活动</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 任务详情 -->
+    <section id="missions" class="py-20 bg-gradient-to-b from-western-black to-western-brown/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-western-yellow relative inline-block">
+                    任务详情
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-western-red"></span>
+                </h2>
+                <p class="max-w-2xl mx-auto">深入了解 Blood Money 活动中的危险任务，每一个决定都可能让你满载而归或横尸荒野</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 任务卡片 1 -->
+                <div class="bg-western-black/60 backdrop-blur-sm rounded-sm overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-2 hover:shadow-western-orange/20 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1074/600/400" alt="银行抢劫任务" class="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-western-orange">银行大劫案</h3>
+                            <span class="bg-western-red/80 text-xs py-1 px-2 rounded-sm">高风险</span>
+                        </div>
+                        <p class="mb-4 text-sm">策划并执行一场完美的银行抢劫，避开安保系统和当地执法人员，带走保险箱中的财富。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-western-yellow"><i class="fa fa-money mr-1"></i> $5,000</span>
+                            <button class="text-sm text-western-beige hover:text-western-orange transition-colors duration-300">
+                                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 任务卡片 2 -->
+                <div class="bg-western-black/60 backdrop-blur-sm rounded-sm overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-2 hover:shadow-western-orange/20 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1062/600/400" alt="火车抢劫任务" class="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-western-orange">火车劫案</h3>
+                            <span class="bg-western-red/80 text-xs py-1 px-2 rounded-sm">高风险</span>
+                        </div>
+                        <p class="mb-4 text-sm">在荒野中拦截一列满载贵重物品的火车，制服守卫，获取货物并安全撤离。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-western-yellow"><i class="fa fa-money mr-1"></i> $7,500</span>
+                            <button class="text-sm text-western-beige hover:text-western-orange transition-colors duration-300">
+                                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 任务卡片 3 -->
+                <div class="bg-western-black/60 backdrop-blur-sm rounded-sm overflow-hidden shadow-lg transform transition-all duration-500 hover:-translate-y-2 hover:shadow-western-orange/20 group">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1066/600/400" alt="绑架任务" class="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-western-orange">目标绑架</h3>
+                            <span class="bg-western-yellow/80 text-xs py-1 px-2 rounded-sm">中等风险</span>
+                        </div>
+                        <p class="mb-4 text-sm">秘密绑架一位重要人物，避开巡逻队，将目标安全送达指定地点换取赎金。</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-western-yellow"><i class="fa fa-money mr-1"></i> $4,000</span>
+                            <button class="text-sm text-western-beige hover:text-western-orange transition-colors duration-300">
+                                查看详情 <i class="fa fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-transparent border-2 border-western-orange text-western-orange hover:bg-western-orange hover:text-western-black font-bold py-2 px-6 rounded-sm transition-all duration-300">
+                    查看全部任务 <i class="fa fa-list-ul ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视差分隔区 -->
+    <div class="parallax h-64 relative">
+        <img src="https://picsum.photos/id/1056/1920/500" alt="西部荒野" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-western-black/60 flex items-center justify-center">
+            <p class="text-2xl md:text-4xl font-bold text-western-yellow text-center px-4 text-shadow-lg">
+                "在西部，要么成为猎人，要么成为猎物"
+            </p>
+        </div>
+    </div>
+
+    <!-- 奖励预览 -->
+    <section id="rewards" class="py-20 bg-western-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-western-yellow relative inline-block">
+                    奖励预览
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-western-red"></span>
+                </h2>
+                <p class="max-w-2xl mx-auto">完成任务，获取丰厚奖励，打造属于你的西部传奇</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold mb-6 text-western-orange">专属武器</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-western-red mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">血钱左轮</h4>
+                                <p class="text-sm text-western-beige/80">定制版左轮手枪，带有独特雕刻和血红色装饰</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-western-red mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">亡命之徒霰弹枪</h4>
+                                <p class="text-sm text-western-beige/80">高威力近距离武器，适合巷战和突袭</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-western-red mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">西部神射手步枪</h4>
+                                <p class="text-sm text-western-beige/80">精准度极高的远程武器，适合狙击任务</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <img src="https://picsum.photos/id/1072/600/600" alt="血钱左轮手枪" class="w-full h-full object-contain animate-pulse-slow">
+                        <div class="absolute -top-4 -right-4 bg-western-red text-western-beige text-xs font-bold py-1 px-3 rounded-sm transform rotate-12">
+                            限定
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <img src="https://picsum.photos/id/1077/600/600" alt="西部 outlaw 服装" class="w-full h-full object-contain animate-pulse-slow">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-western-orange">专属服装</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-western-red mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">亡命之徒套装</h4>
+                                <p class="text-sm text-western-beige/80">包含皮质风衣、宽檐帽和皮靴，完美融入西部风格</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-western-red mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">血色围巾</h4>
+                                <p class="text-sm text-western-beige/80">标志性红色围巾，彰显你的亡命之徒身份</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-western-red mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">黑色皮革手套</h4>
+                                <p class="text-sm text-western-beige/80">保护你的双手，同时隐藏你的指纹</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏截图 -->
+    <section id="gallery" class="py-20 bg-gradient-to-b from-western-brown/30 to-western-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-western-yellow relative inline-block">
+                    游戏截图
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-western-red"></span>
+                </h2>
+                <p class="max-w-2xl mx-auto">欣赏 Blood Money 活动中的精彩瞬间</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1069/600/400" alt="游戏截图1" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1070/600/400" alt="游戏截图2" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1080/600/400" alt="游戏截图3" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1082/600/400" alt="游戏截图4" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1083/600/400" alt="游戏截图5" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1084/600/400" alt="游戏截图6" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1085/600/400" alt="游戏截图7" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+                <div class="gallery-item overflow-hidden rounded-sm cursor-pointer group">
+                    <img src="https://picsum.photos/id/1086/600/400" alt="游戏截图8" class="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 参与按钮 -->
+    <section class="py-16 bg-western-red/20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-western-yellow">准备好踏入西部的黑暗面了吗？</h2>
+            <p class="max-w-2xl mx-auto mb-8">加入 Blood Money 活动，体验最刺激的西部冒险，赢取丰厚奖励</p>
+            <button class="bg-western-red hover:bg-western-red/80 text-western-beige font-bold py-3 px-8 rounded-sm transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                立即参与 <i class="fa fa-play ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-western-black py-12 border-t border-western-brown/30">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-western-yellow font-bold mb-4">荒野大镖客2</h3>
+                    <p class="text-sm text-western-beige/70">探索广阔的西部世界，体验真实的荒野生活</p>
+                </div>
+                <div>
+                    <h3 class="text-western-yellow font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300">关于活动</a></li>
+                        <li><a href="#missions" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300">任务详情</a></li>
+                        <li><a href="#rewards" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300">奖励预览</a></li>
+                        <li><a href="#gallery" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300">游戏截图</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-western-yellow font-bold mb-4">支持</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300">常见问题</a></li>
+                        <li><a href="#" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300">联系我们</a></li>
+                        <li><a href="#" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300">游戏指南</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-western-yellow font-bold mb-4">关注我们</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300 text-xl"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300 text-xl"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300 text-xl"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="text-western-beige/70 hover:text-western-orange transition-colors duration-300 text-xl"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-western-brown/20 text-center text-sm text-western-beige/50">
+                <p>© 2023 荒野大镖客2 版权所有. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 图片查看器模态框 -->
+    <div id="image-viewer" class="fixed inset-0 z-50 flex items-center justify-center bg-western-black/90 opacity-0 pointer-events-none transition-opacity duration-300">
+        <button id="close-viewer" class="absolute top-4 right-4 text-western-beige text-2xl hover:text-western-red transition-colors duration-300">
+            <i class="fa fa-times"></i>
+        </button>
+        <img id="viewer-image" src="" alt="大图预览" class="max-w-[90%] max-h-[90vh] object-contain">
+    </div>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('py-2', 'bg-western-black/90', 'shadow-lg');
+                navbar.classList.remove('py-3', 'bg-western-black/80');
+            } else {
+                navbar.classList.add('py-3', 'bg-western-black/80');
+                navbar.classList.remove('py-2', 'bg-western-black/90', 'shadow-lg');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+            } else {
+                menuToggle.innerHTML = '<i class="fa fa-times"></i>';
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // 图片查看器功能
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const imageViewer = document.getElementById('image-viewer');
+        const viewerImage = document.getElementById('viewer-image');
+        const closeViewer = document.getElementById('close-viewer');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                viewerImage.src = imgSrc;
+                imageViewer.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeViewer.addEventListener('click', () => {
+            imageViewer.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        });
+
+        imageViewer.addEventListener('click', (e) => {
+            if (e.target === imageViewer) {
+                imageViewer.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // 页面加载动画
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
